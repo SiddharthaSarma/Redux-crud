@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actions from "../actions/BooksAction";
 
 class NewBook extends Component {
   constructor() {
@@ -7,7 +9,8 @@ class NewBook extends Component {
   }
   submitForm(event) {
     event.preventDefault();
-    console.log('I am logged');
+    this.props.dispatch(actions.addBook(this.refs.title.value));
+    console.log(this.refs.author.value);
   }
   render() {
     const styles = {
@@ -24,6 +27,7 @@ class NewBook extends Component {
             <div className="form-group">
               <input
                 type="text"
+                ref="title"
                 className="form-control"
                 id="txtTitle"
                 name="title"
@@ -34,6 +38,7 @@ class NewBook extends Component {
             <div className="form-group">
               <input
                 type="text"
+                ref="author"
                 className="form-control"
                 id="txtAuthor"
                 name="author"
@@ -42,15 +47,16 @@ class NewBook extends Component {
               />
             </div>
             <div className="form-group">
-              <select className="form-control" id="ddlLanguage">
-                <option>English</option>
-                <option>Spanish</option>
-                <option>French</option>
+              <select ref="language" className="form-control" id="ddlLanguage">
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
               </select>
             </div>
             <div className="form-group">
               <input
                 type="text"
+                ref="bookLink"
                 className="form-control"
                 id="txtBookLink"
                 name="bookLink"
@@ -73,4 +79,4 @@ class NewBook extends Component {
   }
 }
 
-export default NewBook;
+export default connect()(NewBook);
