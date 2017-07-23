@@ -71,7 +71,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Imports
-	var books = ["Harry potter", "Mission impossible", "Advanced react"];
 	var store = (0, _configureStore2.default)();
 
 	var App = function App() {
@@ -82,7 +81,7 @@
 	      "div",
 	      { className: "container" },
 	      _react2.default.createElement(_NewBook2.default, null),
-	      _react2.default.createElement(_BooksList2.default, { books: books })
+	      _react2.default.createElement(_BooksList2.default, null)
 	    )
 	  );
 	};
