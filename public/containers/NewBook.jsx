@@ -10,7 +10,6 @@ class NewBook extends Component {
   submitForm(event) {
     event.preventDefault();
     this.props.dispatch(actions.addBook(this.refs.title.value));
-    console.log(this.refs.author.value);
   }
   render() {
     const styles = {

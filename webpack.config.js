@@ -9,7 +9,7 @@ module.exports = {
     // Output directory as an absolute path
     path: __dirname,
     // Filename as relative path within output path
-    filename: './public/bundle.js',
+    filename: './public/dist/bundle.js',
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
