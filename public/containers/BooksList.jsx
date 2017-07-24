@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import Book from "../components/Book";
 import { connect } from "react-redux";
+import * as bookActions from '../actions/BooksAction';
 
 class BooksList extends Component {
+  componentDidMount() {
+    this.props.dispatch(bookActions.getBooks());
+  }
   bindBooks(book, index) {
-    return <Book key={index} value={book} />;
+    return <Book key={index} {...book} />;
   }
   render() {
     return (

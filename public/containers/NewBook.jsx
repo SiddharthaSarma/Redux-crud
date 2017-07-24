@@ -9,7 +9,13 @@ class NewBook extends Component {
   }
   submitForm(event) {
     event.preventDefault();
-    this.props.dispatch(actions.addBook(this.refs.title.value));
+    let data = {
+      title: this.refs.title.value,
+      author: this.refs.author.value,
+      publisher: this.refs.publisher.value,
+      genre: this.refs.genre.value
+    };
+    this.props.dispatch(actions.addBook(data));
   }
   render() {
     const styles = {
@@ -46,20 +52,24 @@ class NewBook extends Component {
               />
             </div>
             <div className="form-group">
-              <select ref="language" className="form-control" id="ddlLanguage">
-                <option value="english">English</option>
-                <option value="spanish">Spanish</option>
-                <option value="french">French</option>
-              </select>
+              <input
+                type="text"
+                ref="publisher"
+                className="form-control"
+                id="txtPublisher"
+                name="publisher"
+                placeholder="Book publisher"
+                required
+              />
             </div>
             <div className="form-group">
               <input
                 type="text"
-                ref="bookLink"
+                ref="genre"
                 className="form-control"
-                id="txtBookLink"
-                name="bookLink"
-                placeholder="Book link"
+                id="txtGenre"
+                name="genre"
+                placeholder="Book genre"
                 required
               />
             </div>
