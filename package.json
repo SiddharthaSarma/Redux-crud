@@ -7,14 +7,21 @@
   },
   "scripts": {
     "start": "node server.js",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "seed": "node api/seed/books.js"
   },
   "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
     "express": "^4.13.4",
+    "faker": "^4.1.0",
+    "lodash": "^4.17.4",
+    "nedb": "^1.8.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^5.0.5",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.5.1",
