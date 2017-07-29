@@ -19,3 +19,13 @@ export function getBooks() {
     });
   };
 }
+
+export function deleteBook(id) {
+  console.log(id);
+  const request = axios.delete(`http://localhost:3000/api/books/${id}`);
+  return dispatch => {
+    request.then(({ data }) => {
+      dispatch({ type: "DELETE_BOOK", data: id });
+    });
+  };
+}
