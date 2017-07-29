@@ -64,7 +64,7 @@ const updateBook = (req, res, next) => {
 
 // Delete user
 const deleteBook = (req, res, next) => {
-  let id = req.params.Id;
+  let id = req.params.bookId;
   BooksDB.remove(
     {
       _id: id
