@@ -1,7 +1,7 @@
 const _ = require("lodash");
 const BooksDB = require("../models/bookModel");
 
-// Get all users details
+// Get all book details
 const getBooks = (req, res, next) => {
   BooksDB.find(
     {},
@@ -16,7 +16,7 @@ const getBooks = (req, res, next) => {
     });
 };
 
-// Get a single user details
+// Get a single book details
 const getBook = (req, res, next) => {
   BooksDB.find(
     {
@@ -32,7 +32,7 @@ const getBook = (req, res, next) => {
   );
 };
 
-// Create a new user
+// Create a new book
 const createBook = (req, res, next) => {
   let book = ({ title, author, publisher, genre } = req.body);
 
@@ -42,7 +42,7 @@ const createBook = (req, res, next) => {
   });
 };
 
-// Update user's details.
+// Update book details.
 const updateBook = (req, res, next) => {
   let id = req.params.bookId;
   let book = ({ title, author, publisher, genre } = req.body);
@@ -62,7 +62,7 @@ const updateBook = (req, res, next) => {
   );
 };
 
-// Delete user
+// Delete book
 const deleteBook = (req, res, next) => {
   let id = req.params.bookId;
   BooksDB.remove(
